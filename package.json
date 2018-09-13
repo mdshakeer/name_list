@@ -2,6 +2,7 @@
   "name": "name_list",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://mdshakeer.github.io/name_list",
   "dependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
