@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import NameRow from './NameRow';
+import DeleteRow from './DeleteRow';
 
 class TableList extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      names: []
-    }
-  }
+	handleDelete = (i) => {
+		this.props.handleDelete(i)
+	}
   render() {
+  	const names = this.props.names;
+  	const total = this.props.total;
+  	let i = total;
     return (
       <table className="TableList">
       	<thead>
@@ -20,10 +20,17 @@ class TableList extends Component {
 	      	</tr>
       	</thead>
       	<tbody>
-      		{this.state.names.map((name, i) => 
-      				<NameRow key={i}
-      						 name={name}/>
-      			)}
+	      	{names.map(name => {
+	      	  i-=1;
+	          return (
+	            <tr key={name.id}>
+	            	<td>{total-i}</td>
+	            	<td>{name.name}</td>
+					<td>{name.date_time.toString()}</td>
+					<td><DeleteRow handleDelete={this.props.handleDelete} value={total-i-1}/></td>
+	            </tr>
+	          );
+	        })}
       	</tbody>
       </table>
     );

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 
 class InputBox extends Component {
-  render() {
-    return (
-      <form className="InputBox">
-      	<input type="text"/>
-      	<input type="button" value="Submit"/>
-      </form>
-    );
-  }
+	constructor(props) {
+	    super(props);
+	    this.state = {value: ''};
+	}
+	render() {
+		return (
+		  <form className="InputBox" onSubmit={this.props.handleSubmit}>
+		  	<input type="text" value={this.props.textInput}  onChange={this.props.handleChange}/>
+		  	<input type="submit" value="Submit" />
+		  </form>
+		);
+	}
 }
 
 export default InputBox;
