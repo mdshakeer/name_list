@@ -10,13 +10,13 @@ class TableList extends Component {
   	const total = this.props.total;
   	let i = total;
     return (
-      <table className="TableList">
+      <table className="TableList table table-bordered table-striped mt-20">
       	<thead>
       		<tr>
-	      		<td>Serial No</td>
-	      		<td>Name</td>
-	      		<td>Created At</td>
-	      		<td>Action Item</td>
+	      		<th>Serial No</th>
+	      		<th>Name</th>
+	      		<th>Created At</th>
+	      		<th>Action Item</th>
 	      	</tr>
       	</thead>
       	<tbody>

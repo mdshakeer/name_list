@@ -45,13 +45,15 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <InputBox handleSubmit={ this.handleSubmit } 
-          handleChange={ this.handleChange }
-          textInput={ this.state.input }/>
-        <TableList names={this.state.names}
-          total={this.state.total}
-          handleDelete={ this.handleDelete }/>
+      <div className="App col-lg-12 col-md-12 mt-20">
+        <div className="container">
+          <InputBox handleSubmit={ this.handleSubmit } 
+            handleChange={ this.handleChange }
+            textInput={ this.state.input }/>
+          <TableList names={this.state.names}
+            total={this.state.total}
+            handleDelete={ this.handleDelete }/>
+        </div>
       </div>
     );
   }
